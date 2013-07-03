@@ -19,8 +19,9 @@ def heapify(nums,parent):
     return nums
 
 def kway(heap_list,original_pos,input_list,index,kway_sorted):
-  while True:
-		kway_sorted.append(heap_list[0])
+	while True:
+		if heap_list[0]!=None:
+			kway_sorted.append(heap_list[0])
 		poped_index=original_pos.index(heap_list[0])			#index of the sublist	
 		index[poped_index]+=1
 		if index[poped_index]<len(input_list[poped_index]):
@@ -39,7 +40,7 @@ def kway(heap_list,original_pos,input_list,index,kway_sorted):
 		
 if __name__=='__main__':
 
-	input_list=[[28,8,5,2],[23,21,17,11,10,12],[18,11,9,6],[],[92,30,26]]		#input should be sorted decsendingly
+	input_list=[[28,8,5,2],[23,21,17,12,11,10],[94,58,26,24,1],[18,11,9,6],[],[92,30,26]]		#input should be sorted descendingly
 	#input_list=[[2],[6],[9],[],[8]]
 	print input_list
 	
