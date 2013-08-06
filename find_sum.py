@@ -1,5 +1,5 @@
-def find_sum(nums,key):
-  i=0
+"""def find_sum(nums,key):
+	i=0
 	while i<len(nums) and nums[i]<key:
 		low=i+1
 		high=len(nums)-1
@@ -11,8 +11,25 @@ def find_sum(nums,key):
 			elif nums[i]+nums[mid]>key:high=mid-1
 			else:low=mid+1
 		i+=1
-	print "No such pair found"
+	print "No such pair found" """
 				
+def find_sum(nums,key):
+	s=0
+	e=len(nums)-1
+	while s<e:
+		if nums[s]+nums[e]==key :
+			print "Such pair found at index ("+str(s)+","+str(e)+")"
+			print "nums["+str(s)+"] = "+str(nums[s])
+			print "nums["+str(e)+"] = "+str(nums[e])
+			print str(nums[s])+"+"+str(nums[e])+"="+str(key)
+			return
+		elif nums[s]+nums[e]<key :
+			s+=1
+		else : 
+			e-=1
+	print "No such element found"
+
+
 def get_data():
         nums=[]
         while True:
